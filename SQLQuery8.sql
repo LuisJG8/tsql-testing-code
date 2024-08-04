@@ -1,4 +1,4 @@
---SELECT
+SELECT
 SELECT CustomerID, LastName, FirstName, CompanyName
 FROM SalesLT.Customer
 
