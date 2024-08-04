@@ -1,4 +1,4 @@
-SELECT
+--SELECT
 SELECT CustomerID, LastName, FirstName, CompanyName
 FROM SalesLT.Customer
 
@@ -9,7 +9,7 @@ SELECT CustomerID, SalesOrderID
 FROM SalesLT.SalesOrderHeader
 
 
-FILTERING DATA
+--FILTERING DATA
 SELECT BusinessEntityID, LoginID, JobTitle
 FROM HumanResources.Employee
 WHERE JobTitle = 'Research and Development Engineer' 
@@ -47,7 +47,7 @@ ORDER BY ModifiedDate DESC
 
 
 
-NULLS
+--NULLS
 SELECT ProductID, Name, Color
 FROM Production.Product
 WHERE Color IS NULL
@@ -61,7 +61,7 @@ FROM Production.Product
 WHERE Style IS NOT NULL OR Size IS NOT NULL OR Color IS NOT NULL
 
 
-Sorting
+--Sorting
 SELECT BusinessEntityID, FirstName, MiddleName, LastName
 FROM Person.Person
 ORDER BY LastName DESC, FirstName DESC, MiddleName DESC
@@ -70,12 +70,12 @@ SELECT AddressLine1 + '(' + City + ' ' + PostalCode + ')' AS new_format
 FROM Person.Address
 
 
-Functions and Expressions
+--Functions and Expressions
 SELECT ProductID, Name + ISNULL(':'  + color, '') AS Description
 FROM Production.Product
 
 
-Mathematical Operations
+--Mathematical Operations
 SELECT MaxQty - MinQty AS DIFF, SpecialOfferID, Description
 FROM Sales.SpecialOffer
 
@@ -86,7 +86,7 @@ SELECT  SpecialOfferID, Description, ISNULL(MaxQty, 10) * DiscountPct AS total
 FROM Sales.SpecialOffer
 
 
-String Functions
+--String Functions
 SELECT RIGHT(AddressLine1, 10) AddressLine1
 FROM Person.Address;
 
@@ -102,7 +102,7 @@ SELECT ProductNumber, SUBSTRING(ProductNumber, CHARINDEX('-', ProductNumber) +1,
 SELECT ProductNumber, CHARINDEX('-',ProductNumber)  FROM Production.Product;  
 SELECT ProductNumber, SUBSTRING(ProductNumber, CHARINDEX('-',ProductNumber)+1,25) AS ProdNumber  FROM Production.Product;
 
-DATE FUNCTIONS
+--DATE FUNCTIONS
 SELECT DATEDIFF(day, OrderDate, ShipDate), OrderDate, ShipDate
 FROM Sales.SalesOrderHeader
 
